@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in page</title>
+    <script src="https://kit.fontawesome.com/88950f849a.js" crossorigin="anonymous"></script>
+    <script>
+        function validateform(){
+            var name=document.getElementById("name").value;
+            var password=document.getElementById("password").value;
+            if(name===null || name.trim()===""){
+                alert("Name can't be blank.");
+                name.focus();
+                return false;
+            }
+            else if(password==="" || password.trim()===""){
+                alert("Please enter your Password.");
+                password.focus();
+                return false;
+            }
+            else if(password.length<6){
+                alert("Password should be atleast 6 character long.");
+                password.focus();
+                return false;
+            }
+            return true;
+        }
+        </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800&display=swap');
+        *{
+            font-family: 'League Spartan', sans-serif;
+            margin: 0;
+        }
+        .box{
+            background-color: #ffffff;
+            width: 320px;
+            padding: 50px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .box:hover{
+            box-shadow: 10px 10px 30px black;
+        }
+        body{
+            height: 795px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #001822;
+            background: linear-gradient(0deg, #001822, #A8CF45);
+            background-repeat:no-repeat;
+            background-position: center;
+            background-size: contain;
+            
+        }
+
+        p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px; 
+            font-size: 25px;
+            font-weight:700;
+            color: #001822;
+            
+        }
+        .forem{
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        input{
+            border-radius: 20px;
+            height: 30px;
+            border-top: #001822;
+            border-left: #001822;
+            border-right: #001822;
+            font-size: 15px;
+            color: black;
+        }
+        
+        
+        a{
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+        a:hover{
+            color: #001822;
+        }
+        .submit{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 30px;
+        }
+        
+        .submit button{
+            border-radius: 30px;
+            height: 30px;
+            width: 80px;
+            border: 1px;
+            font-size: 14px;
+            font-weight: 700;
+            
+        }
+        .submit button:hover{
+            box-shadow: 1px 1px 10px black;
+            cursor: pointer;
+        }
+        .icon{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            padding-top: 30px;
+        }
+        .icon i{
+            padding-left: 10px;
+            font-size: x-large;
+        }
+
+        .icon i:hover{
+            color: #A8CF45;
+            cursor: pointer;
+        }
+            
+    </style>
+</head>
+<body><script src="script.js"></script>
+        <section class="box">
+            <div>
+                <p>Sign in</p>
+            </div>
+        <form class="for"  name="signinform" onsubmit="return validateform()" action="index.html"> 
+            <div class="forem">
+                <input type="text" name="first name" placeholder="  Username" id="name" >
+                <br>
+                <input type="password" name="password" placeholder="  Password" id="password">
+                <br>
+                <a href="#">Forgot password?</a><br>
+            </div><div class="submit">
+                <button>Cancel</button>
+                <button>Sign in</button>
+            </div>
+        </form>
+        <div class="icon">
+            <i class="fa-brands fa-google"></i>
+        </div>
+        </section>
+</body>
+</html>
